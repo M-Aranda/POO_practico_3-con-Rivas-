@@ -24,6 +24,7 @@ public class Victor_rivas_marcelo_aranda {
 
         int MAXIMO = 20;// variable "MAXIMO" para regular el alto y ancho de la pieza
 
+
         int ancho_de_matriz;
         int alto_de_matriz;
 
@@ -178,6 +179,7 @@ public class Victor_rivas_marcelo_aranda {
                     int fg = g.obtenerFilaCoordenadas_del_gato();
                     int cg = g.obtenerColumnaCoordenadas_del_gato();
 
+
                     if ((pieza[fg][cg] = " - ") == (pieza[fg][cg] = " - ")) {
                         pieza[g.obtenerFilaCoordenadas_del_gato()][g.obtenerColumnaCoordenadas_del_gato()] = " G ";
 
@@ -331,126 +333,119 @@ public class Victor_rivas_marcelo_aranda {
         }
 
         Scanner tomarCantMuebles = new Scanner(System.in);
-        while (true) {
-            try {
-                System.out.print("Cantidad de muebles: ");
-                int cantMuebles = Integer.parseInt(tomarCantMuebles.nextLine());
 
-                //pp=primera punta sp=segunda punta
-                for (int i = 0; i < cantMuebles; i++) {
+        System.out.print("Cantidad de muebles: ");
+        int cantMuebles = Integer.parseInt(tomarCantMuebles.nextLine());
 
-                    Scanner leerMueble_pp = new Scanner(System.in);
-                    System.out.println("Mueble Nº " + (i + 1) + ": ");
+        //pp=primera punta sp=segunda punta
+        for (int i = 0; i < cantMuebles; i++) {
 
-                    System.out.print("Ingrese fila y columna separada por un espacio: ");
-                    String coorM_pp = leerMueble_pp.nextLine();
-                    Primera_coordenada_de_mueble pc = new Primera_coordenada_de_mueble(coorM_pp);
+            Scanner leerMueble_pp = new Scanner(System.in);
+            System.out.println("Mueble Nº " + (i + 1) + ": ");
 
-                    int primeraFila = (pc.obtenerPrimeraFila()) + 1;
-                    int primeraColumna = (pc.obtenerPrimeraColumna() + 1);
+            System.out.print("Ingrese fila y columna separada por un espacio: ");
+            String coorM_pp = leerMueble_pp.nextLine();
+            Primera_coordenada_de_mueble pc = new Primera_coordenada_de_mueble(coorM_pp);
 
-                    pieza[primeraFila][primeraColumna] = " x ";
+            int primeraFila = (pc.obtenerPrimeraFila()) + 1;
+            int primeraColumna = (pc.obtenerPrimeraColumna() + 1);
 
-                    for (int j = 0; j < alto_de_matriz; j++) {
-                        System.out.printf("---");
+            pieza[primeraFila][primeraColumna] = " x ";
 
-                    }
-                    System.out.println("");
-                    for (int k = 0; k < ancho_de_matriz; k++) {
-                        for (int l = 0; l < alto_de_matriz; l++) {
-                            System.out.print(pieza[k][l]);
+            for (int j = 0; j < alto_de_matriz; j++) {
+                System.out.printf("---");
 
-                        }
-                        System.out.println();
+            }
+            System.out.println("");
+            for (int k = 0; k < ancho_de_matriz; k++) {
+                for (int l = 0; l < alto_de_matriz; l++) {
+                    System.out.print(pieza[k][l]);
 
-                    }
+                }
+                System.out.println();
 
-                    for (int j = 0; j < alto_de_matriz; j++) {
-                        System.out.printf("---");
-                    }
-                    System.out.println();
+            }
 
-                    Scanner leerMueble_sp = new Scanner(System.in);
+            for (int j = 0; j < alto_de_matriz; j++) {
+                System.out.printf("---");
+            }
+            System.out.println();
 
-                    System.out.print("Ingrese fila y columna separada por un espacio: ");
-                    String coorM_sp = leerMueble_sp.nextLine();
-                    Segunda_coordenada_de_mueble sc = new Segunda_coordenada_de_mueble(coorM_sp);
+            Scanner leerMueble_sp = new Scanner(System.in);
 
-                    int segundaFila = (sc.ObtenerSegundaFila()) + 1;
-                    int segundaColumna = (sc.ObtenerSegundaColumna()) + 1;
+            System.out.print("Ingrese fila y columna separada por un espacio: ");
+            String coorM_sp = leerMueble_sp.nextLine();
+            Segunda_coordenada_de_mueble sc = new Segunda_coordenada_de_mueble(coorM_sp);
 
-                    pieza[segundaFila][segundaColumna] = " x ";
+            int segundaFila = (sc.ObtenerSegundaFila()) + 1;
+            int segundaColumna = (sc.ObtenerSegundaColumna()) + 1;
 
-                    for (int j = 0; j < alto_de_matriz; j++) {
-                        System.out.printf("---");
+            pieza[segundaFila][segundaColumna] = " x ";
 
-                    }
-                    System.out.println("");
-                    for (int k = 0; k < ancho_de_matriz; k++) {
-                        for (int l = 0; l < alto_de_matriz; l++) {
-                            System.out.print(pieza[k][l]);
+            for (int j = 0; j < alto_de_matriz; j++) {
+                System.out.printf("---");
 
-                        }
-                        System.out.println();
+            }
+            System.out.println("");
+            for (int k = 0; k < ancho_de_matriz; k++) {
+                for (int l = 0; l < alto_de_matriz; l++) {
+                    System.out.print(pieza[k][l]);
 
-                    }
+                }
+                System.out.println();
 
-                    for (int j = 0; j < alto_de_matriz; j++) {
-                        System.out.printf("---");
-                    }
-                    System.out.println();
+            }
 
-                    Scanner leerEleccion = new Scanner(System.in);
+            for (int j = 0; j < alto_de_matriz; j++) {
+                System.out.printf("---");
+            }
+            System.out.println();
 
-                    System.out.println("Proceder?: ");
-                    System.out.println("1.Si");
-                    System.out.println("2.No");
+            Scanner leerEleccion = new Scanner(System.in);
 
-                    int eleccion = leerEleccion.nextInt();
+            System.out.println("Proceder?: ");
+            System.out.println("1.Si");
+            System.out.println("2.No");
 
-                    if (eleccion == 1) {
+            int eleccion = leerEleccion.nextInt();
 
-                        /*                     
+            if (eleccion == 1) {
+
+                /*                     
 Lineas 422 a la 425 sirven para rellenar las coordenada ingresadas con M. 
 Se necesita aumentar la segundaColumna y la segundaFila e 1, para que calze 
 con el limite de la matriz. Se comienza en la primera fila y la primera columna,
 y sus limites son la segunda columna y la segunda fila respectivamente.
                     
-                         */
-                        for (int j = primeraFila; j < segundaColumna + 1; j++) {
-                            for (int k = primeraColumna; k < segundaFila + 1; k++) {
-                                pieza[j][k] = " M ";
-                            }
+                 */
+                for (int j = primeraFila; j < segundaColumna + 1; j++) {
+                    for (int k = primeraColumna; k < segundaFila + 1; k++) {
+                        pieza[j][k] = " M ";
+                    }
 
-                        }
-
-                        for (int j = 0; j < alto_de_matriz; j++) {
-                            System.out.printf("---");
-
-                        }
-                        System.out.println("");
-                        for (int k = 0; k < ancho_de_matriz; k++) {
-                            for (int l = 0; l < alto_de_matriz; l++) {
-                                System.out.print(pieza[k][l]);
-
-                            }
-                            System.out.println();
-
-                        }
-                        for (int j = 0; j < alto_de_matriz; j++) {
-                            System.out.printf("---");
-                        }
-
-                        System.out.println();
-
-                    }}}catch (Exception e) {
-                        System.out.println("[ERROR] Ingrese cantidad valida");
-            }
                 }
 
+                for (int j = 0; j < alto_de_matriz; j++) {
+                    System.out.printf("---");
+
+                }
+                System.out.println("");
+                for (int k = 0; k < ancho_de_matriz; k++) {
+                    for (int l = 0; l < alto_de_matriz; l++) {
+                        System.out.print(pieza[k][l]);
+
+                    }
+                    System.out.println();
+
+                }
+                for (int j = 0; j < alto_de_matriz; j++) {
+                    System.out.printf("---");
+                }
+
+                System.out.println();
             }
         }
 
-    
+    }
 
-
+}
